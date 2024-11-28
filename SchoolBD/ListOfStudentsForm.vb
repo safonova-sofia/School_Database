@@ -1,0 +1,53 @@
+﻿Public Class ListOfStudentsForm
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Список_учениковBindingSource.MoveFirst()
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Виды_классов". При необходимости она может быть перемещена или удалена.
+        Me.Виды_классовTableAdapter.Fill(Me.SchoolDataSet.Виды_классов)
+        'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Сотрудники". При необходимости она может быть перемещена или удалена.
+        Me.СотрудникиTableAdapter.Fill(Me.SchoolDataSet.Сотрудники)
+        'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Список_учеников". При необходимости она может быть перемещена или удалена.
+        Me.Список_учениковTableAdapter.Fill(Me.SchoolDataSet.Список_учеников)
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Список_учениковBindingSource.MoveLast()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Список_учениковBindingSource.MovePrevious()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Список_учениковBindingSource.MoveNext()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Список_учениковBindingSource.AddNew()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Список_учениковBindingSource.RemoveCurrent()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Me.Validate()
+        Список_учениковBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.SchoolDataSet)
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        ListOfStudentsTable.Show()
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        ListOfStudentsReportWindow.Show()
+    End Sub
+
+    Private Sub BindingNavigator2_RefreshItems(sender As Object, e As EventArgs)
+
+    End Sub
+End Class
