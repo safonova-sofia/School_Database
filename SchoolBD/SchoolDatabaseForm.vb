@@ -1,4 +1,21 @@
 ﻿Public Class SchoolDatabaseForm
+
+
+    Private UserType As String
+
+    ' Метод для установки типа пользователя
+    Public Sub SetUserType(type As String)
+        UserType = type
+    End Sub
+
+    ' Обработчик события для открытия HRdepartmentForm
+    Private Sub OpenHRDepartmentForm()
+        Dim hrForm As New HRdepartmentForm()
+        hrForm.SetUserType(UserType)  ' Передаем тип пользователя
+        hrForm.Show()
+        Me.Hide()
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         TypesOfClassesForm.Show()
     End Sub
@@ -27,7 +44,7 @@
         StudentsForm.Show()
     End Sub
 
-    Private Sub Button17_Click(sender As Object, e As EventArgs) 
+    Private Sub Button17_Click(sender As Object, e As EventArgs)
 
     End Sub
 

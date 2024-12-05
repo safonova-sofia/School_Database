@@ -114,6 +114,12 @@
     <Compile Include="ClassesReportWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PositionReportWindow.Designer.vb">
       <DependentUpon>PositionReportWindow.vb</DependentUpon>
     </Compile>
@@ -341,6 +347,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -361,6 +368,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ClassesReportWindow.resx">
       <DependentUpon>ClassesReportWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PositionReportWindow.resx">
       <DependentUpon>PositionReportWindow.vb</DependentUpon>
