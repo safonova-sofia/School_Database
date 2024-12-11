@@ -1,18 +1,49 @@
 ﻿Public Class ScheduleOfLessonsForm
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSetNew.Расписание_занятий". При необходимости она может быть перемещена или удалена.
+    Private UserType As String
 
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Виды_классов". При необходимости она может быть перемещена или удалена.
-        Me.Виды_классовTableAdapter.Fill(Me.SchoolDataSet.Виды_классов)
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Сотрудники". При необходимости она может быть перемещена или удалена.
-        Me.СотрудникиTableAdapter.Fill(Me.SchoolDataSet.Сотрудники)
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Расписание_занятий". При необходимости она может быть перемещена или удалена.
-        Me.Расписание_занятийTableAdapter.Fill(Me.SchoolDataSet.Расписание_занятий)
-
+    ' Метод для установки типа пользователя
+    Public Sub SetUserType(type As String)
+        UserType = type
     End Sub
 
-    Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Загрузка данных в таблицы
+        Me.Виды_классовTableAdapter.Fill(Me.SchoolDataSet.Виды_классов)
+        Me.СотрудникиTableAdapter.Fill(Me.SchoolDataSet.Сотрудники)
+        Me.Расписание_занятийTableAdapter.Fill(Me.SchoolDataSet.Расписание_занятий)
 
+        ' Проверяем тип пользователя и скрываем кнопки редактирования для "ученик" и "учитель"
+        If UserType = "Student" Or UserType = "Teacher" Then
+            If UserType = "Teacher" Then
+                ApplyTeacherOrStudentRestrictions()
+                ' Сообщение о том, что пользователь вошел как учитель
+                MessageBox.Show("Вы вошли как учитель. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ElseIf UserType = "Student" Then
+                ' Сообщение о том, что пользователь вошел как ученик
+                ApplyTeacherOrStudentRestrictions()
+                MessageBox.Show("Вы вошли как ученик. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                ' Дополнительно для проверки, если тип пользователя не "Teacher"
+                MessageBox.Show("Тип пользователя: " & UserType, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+    End Sub
+
+    Private Sub ApplyTeacherOrStudentRestrictions()
+        ' Скрываем кнопки для добавления и сохранения
+        Button3.Visible = False ' Кнопка добавления
+        Button7.Visible = False ' Кнопка сохранения
+        Button6.Visible = False ' Кнопка удаления
+
+        ' Также можно сделать кнопки недоступными
+        Button3.Enabled = False
+        Button7.Enabled = False
+        Button6.Enabled = False
+    End Sub
+
+
+    Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
+        ' Ваш код
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -25,7 +56,6 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Расписание_занятийBindingSource.MovePrevious()
-
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -33,19 +63,13 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        ' Кнопка добавления
         Расписание_занятийBindingSource.AddNew()
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        ' Кнопка удаления
         Расписание_занятийBindingSource.RemoveCurrent()
-    End Sub
-
-    Private Sub BindingNavigatorMovePreviousItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMovePreviousItem.Click
-
-    End Sub
-
-    Private Sub ContextMenuStrip2_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuStrip2.Opening
-
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
@@ -57,6 +81,7 @@
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        ' Кнопка сохранения
         Me.Validate()
         Расписание_занятийBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.SchoolDataSet)

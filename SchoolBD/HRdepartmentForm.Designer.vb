@@ -399,7 +399,7 @@ Partial Class HRdepartmentForm
         Me.BindingNavigator1.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.BindingNavigator1.Name = "BindingNavigator1"
         Me.BindingNavigator1.PositionItem = Me.BindingNavigatorPositionItem
-        Me.BindingNavigator1.Size = New System.Drawing.Size(800, 27)
+        Me.BindingNavigator1.Size = New System.Drawing.Size(800, 31)
         Me.BindingNavigator1.TabIndex = 70
         Me.BindingNavigator1.Text = "BindingNavigator1"
         '
@@ -409,7 +409,7 @@ Partial Class HRdepartmentForm
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorAddNewItem.Text = "Добавить"
         '
         'BindingNavigatorCountItem

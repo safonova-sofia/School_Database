@@ -6,43 +6,43 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.44733cm</Width>
+              <Width>3.41016cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.11383cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.11383cm</Width>
+              <Width>2.246cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.55833cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5cm</Width>
+              <Width>3.30667cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>9.20983cm</Width>
+              <Width>6.79683cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.65383cm</Width>
+              <Width>4.95533cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.84434cm</Width>
+              <Width>4.63784cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.01367cm</Width>
+              <Width>4.55317cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.92333cm</Width>
+              <Width>1.58983cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.31467cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.8015cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.82267cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1094,7 +1094,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>1.8cm</Height>
-        <Width>56.37832cm</Width>
+        <Width>43.10682cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

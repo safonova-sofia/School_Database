@@ -15,6 +15,13 @@
         Me.Hide()
     End Sub
 
+    Private Sub OpenScheduleOfLessonsForm()
+        Dim scheduleForm As New ScheduleOfLessonsForm()
+        scheduleForm.SetUserType(UserType)  ' Передаем тип пользователя
+        scheduleForm.Show()
+        Me.Hide()
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         TypesOfClassesForm.Show()
     End Sub
@@ -56,7 +63,7 @@
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
-        ScheduleOfLessonsForm.Show()
+        OpenScheduleOfLessonsForm() 
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
