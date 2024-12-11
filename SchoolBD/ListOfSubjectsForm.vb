@@ -75,7 +75,9 @@
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        ListOfSubjectsTable.Show()
+        Dim subjectsTable As New ListOfSubjectsTable() ' Создание экземпляра формы HRdepartmentTable
+        subjectsTable.SetUserType(UserType)          ' Передача типа пользователя
+        subjectsTable.Show()                         ' Открытие формы
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click

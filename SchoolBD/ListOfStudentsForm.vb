@@ -1,4 +1,11 @@
 ﻿Public Class ListOfStudentsForm
+
+    Private UserType As String
+
+    ' Метод для установки типа пользователя
+    Public Sub SetUserType(type As String)
+        UserType = type
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Список_учениковBindingSource.MoveFirst()
     End Sub
@@ -11,6 +18,20 @@
         'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Список_учеников". При необходимости она может быть перемещена или удалена.
         Me.Список_учениковTableAdapter.Fill(Me.SchoolDataSet.Список_учеников)
 
+        If UserType = "Student" Then
+            ApplyStudentRestrictions()
+            ' Сообщение о том, что пользователь вошел как учитель
+            MessageBox.Show("Вы вошли как ученик. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub ApplyStudentRestrictions()
+
+
+        ' Скрытие кнопок управления данными
+        Button3.Visible = False    ' Добавить
+        Button6.Visible = False    ' Удалить
+        Button7.Visible = False    ' Сохранить изменения
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -48,6 +69,10 @@
     End Sub
 
     Private Sub BindingNavigator2_RefreshItems(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub BindingNavigator1_RefreshItems(sender As Object, e As EventArgs) Handles BindingNavigator1.RefreshItems
 
     End Sub
 End Class

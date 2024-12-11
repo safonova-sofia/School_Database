@@ -24,13 +24,23 @@ Partial Class PositionReportWindow
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.SchoolDataSet = New SchoolBD.SchoolDataSet()
         Me.ДолжностиBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SchoolDataSet = New SchoolBD.SchoolDataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.ДолжностиTableAdapter = New SchoolBD.SchoolDataSetTableAdapters.ДолжностиTableAdapter()
-        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ДолжностиBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ДолжностиBindingSource
+        '
+        Me.ДолжностиBindingSource.DataMember = "Должности"
+        Me.ДолжностиBindingSource.DataSource = Me.SchoolDataSet
+        '
+        'SchoolDataSet
+        '
+        Me.SchoolDataSet.DataSetName = "SchoolDataSet"
+        Me.SchoolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -45,30 +55,20 @@ Partial Class PositionReportWindow
         Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
         Me.ReportViewer1.TabIndex = 0
         '
-        'SchoolDataSet
-        '
-        Me.SchoolDataSet.DataSetName = "SchoolDataSet"
-        Me.SchoolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ДолжностиBindingSource
-        '
-        Me.ДолжностиBindingSource.DataMember = "Должности"
-        Me.ДолжностиBindingSource.DataSource = Me.SchoolDataSet
-        '
         'ДолжностиTableAdapter
         '
         Me.ДолжностиTableAdapter.ClearBeforeFill = True
         '
-        'Form2
+        'PositionReportWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "Form2"
-        Me.Text = "Form2"
-        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "PositionReportWindow"
+        Me.Text = "PositionReportWindow"
         CType(Me.ДолжностиBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -15,10 +15,8 @@
             ApplyTeacherRestrictions()
             ' Сообщение о том, что пользователь вошел как учитель
             MessageBox.Show("Вы вошли как учитель. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Else
-            ' Дополнительно для проверки, если тип пользователя не "Teacher"
-            MessageBox.Show("Тип пользователя: " & UserType, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+
     End Sub
 
     ' Метод для ограничения доступа учителю

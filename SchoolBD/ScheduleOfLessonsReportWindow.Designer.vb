@@ -24,13 +24,23 @@ Partial Class ScheduleOfLessonsReportWindow
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.SchoolDataSet = New SchoolBD.SchoolDataSet()
         Me.Расписание_занятийBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SchoolDataSet = New SchoolBD.SchoolDataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Расписание_занятийTableAdapter = New SchoolBD.SchoolDataSetTableAdapters.Расписание_занятийTableAdapter()
-        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Расписание_занятийBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Расписание_занятийBindingSource
+        '
+        Me.Расписание_занятийBindingSource.DataMember = "Расписание занятий"
+        Me.Расписание_занятийBindingSource.DataSource = Me.SchoolDataSet
+        '
+        'SchoolDataSet
+        '
+        Me.SchoolDataSet.DataSetName = "SchoolDataSet"
+        Me.SchoolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -45,30 +55,20 @@ Partial Class ScheduleOfLessonsReportWindow
         Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
         Me.ReportViewer1.TabIndex = 0
         '
-        'SchoolDataSet
-        '
-        Me.SchoolDataSet.DataSetName = "SchoolDataSet"
-        Me.SchoolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Расписание_занятийBindingSource
-        '
-        Me.Расписание_занятийBindingSource.DataMember = "Расписание занятий"
-        Me.Расписание_занятийBindingSource.DataSource = Me.SchoolDataSet
-        '
         'Расписание_занятийTableAdapter
         '
         Me.Расписание_занятийTableAdapter.ClearBeforeFill = True
         '
-        'Form1
+        'ScheduleOfLessonsReportWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
-        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "ScheduleOfLessonsReportWindow"
+        Me.Text = "ScheduleOfLessonsReportWindow"
         CType(Me.Расписание_занятийBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

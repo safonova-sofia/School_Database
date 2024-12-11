@@ -363,7 +363,7 @@ Partial Class HRdepartmentTable
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "HRdepartmentTable"
-        Me.Text = "Form1"
+        Me.Text = "HRdepartmentTable"
         CType(Me.Отдел_кадровBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ДолжностиBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

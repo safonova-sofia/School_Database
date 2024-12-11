@@ -66,7 +66,7 @@ Partial Class StudentsReportWindow
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "StudentsReportWindow"
-        Me.Text = "Form22"
+        Me.Text = "StudentsReportWindow"
         CType(Me.УченикиBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

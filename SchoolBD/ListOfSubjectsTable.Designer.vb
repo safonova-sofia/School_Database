@@ -274,7 +274,7 @@ Partial Class ListOfSubjectsTable
         Me.Список_предметовBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.Список_предметовBindingNavigator.Name = "Список_предметовBindingNavigator"
         Me.Список_предметовBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.Список_предметовBindingNavigator.Size = New System.Drawing.Size(869, 31)
+        Me.Список_предметовBindingNavigator.Size = New System.Drawing.Size(869, 27)
         Me.Список_предметовBindingNavigator.TabIndex = 75
         Me.Список_предметовBindingNavigator.Text = "BindingNavigator1"
         '
@@ -284,13 +284,13 @@ Partial Class ListOfSubjectsTable
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorAddNewItem.Text = "Добавить"
         '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(55, 28)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(55, 24)
         Me.BindingNavigatorCountItem.Text = "для {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Общее число элементов"
         '
@@ -300,7 +300,7 @@ Partial Class ListOfSubjectsTable
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorDeleteItem.Text = "Удалить"
         '
         'BindingNavigatorMoveFirstItem
@@ -309,7 +309,7 @@ Partial Class ListOfSubjectsTable
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMoveFirstItem.Text = "Переместить в начало"
         '
         'BindingNavigatorMovePreviousItem
@@ -318,13 +318,13 @@ Partial Class ListOfSubjectsTable
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMovePreviousItem.Text = "Переместить назад"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
         '
         'BindingNavigatorPositionItem
         '
@@ -339,7 +339,7 @@ Partial Class ListOfSubjectsTable
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -347,7 +347,7 @@ Partial Class ListOfSubjectsTable
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMoveNextItem.Text = "Переместить вперед"
         '
         'BindingNavigatorMoveLastItem
@@ -356,13 +356,13 @@ Partial Class ListOfSubjectsTable
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMoveLastItem.Text = "Переместить в конец"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
         '
         'Список_предметовBindingNavigatorSaveItem
         '
@@ -370,7 +370,7 @@ Partial Class ListOfSubjectsTable
         Me.Список_предметовBindingNavigatorSaveItem.Enabled = False
         Me.Список_предметовBindingNavigatorSaveItem.Image = CType(resources.GetObject("Список_предметовBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.Список_предметовBindingNavigatorSaveItem.Name = "Список_предметовBindingNavigatorSaveItem"
-        Me.Список_предметовBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 28)
+        Me.Список_предметовBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
         Me.Список_предметовBindingNavigatorSaveItem.Text = "Сохранить данные"
         '
         'Список_предметовDataGridView
@@ -466,7 +466,7 @@ Partial Class ListOfSubjectsTable
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "ListOfSubjectsTable"
-        Me.Text = "Form1"
+        Me.Text = "ListOfSubjectsTable"
         CType(Me.Список_предметовBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

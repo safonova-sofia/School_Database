@@ -234,7 +234,7 @@ Partial Class SchoolDatabaseForm
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "SchoolDatabaseForm"
-        Me.Text = "Form1"
+        Me.Text = "SchoolDatabaseForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

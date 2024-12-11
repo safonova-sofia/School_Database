@@ -73,7 +73,6 @@ Partial Class ListOfClassesTable
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Список_классовBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.СписокКлассовBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -294,7 +293,7 @@ Partial Class ListOfClassesTable
         Me.Список_классовBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.Список_классовBindingNavigator.Name = "Список_классовBindingNavigator"
         Me.Список_классовBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.Список_классовBindingNavigator.Size = New System.Drawing.Size(866, 31)
+        Me.Список_классовBindingNavigator.Size = New System.Drawing.Size(866, 27)
         Me.Список_классовBindingNavigator.TabIndex = 63
         Me.Список_классовBindingNavigator.Text = "BindingNavigator1"
         '
@@ -304,13 +303,13 @@ Partial Class ListOfClassesTable
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorAddNewItem.Text = "Добавить"
         '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(55, 28)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(55, 24)
         Me.BindingNavigatorCountItem.Text = "для {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Общее число элементов"
         '
@@ -320,7 +319,7 @@ Partial Class ListOfClassesTable
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorDeleteItem.Text = "Удалить"
         '
         'BindingNavigatorMoveFirstItem
@@ -329,7 +328,7 @@ Partial Class ListOfClassesTable
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMoveFirstItem.Text = "Переместить в начало"
         '
         'BindingNavigatorMovePreviousItem
@@ -338,13 +337,13 @@ Partial Class ListOfClassesTable
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMovePreviousItem.Text = "Переместить назад"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
         '
         'BindingNavigatorPositionItem
         '
@@ -359,7 +358,7 @@ Partial Class ListOfClassesTable
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -367,7 +366,7 @@ Partial Class ListOfClassesTable
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMoveNextItem.Text = "Переместить вперед"
         '
         'BindingNavigatorMoveLastItem
@@ -376,13 +375,13 @@ Partial Class ListOfClassesTable
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMoveLastItem.Text = "Переместить в конец"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
         '
         'Список_классовBindingNavigatorSaveItem
         '
@@ -390,7 +389,7 @@ Partial Class ListOfClassesTable
         Me.Список_классовBindingNavigatorSaveItem.Enabled = False
         Me.Список_классовBindingNavigatorSaveItem.Image = CType(resources.GetObject("Список_классовBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.Список_классовBindingNavigatorSaveItem.Name = "Список_классовBindingNavigatorSaveItem"
-        Me.Список_классовBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 28)
+        Me.Список_классовBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
         Me.Список_классовBindingNavigatorSaveItem.Text = "Сохранить данные"
         '
         'ComboBox2
@@ -422,7 +421,7 @@ Partial Class ListOfClassesTable
         Me.Список_классовDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Список_классовDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.Список_классовDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Список_классовDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn14})
+        Me.Список_классовDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
         Me.Список_классовDataGridView.DataSource = Me.Список_классовBindingSource
         Me.Список_классовDataGridView.Location = New System.Drawing.Point(52, 130)
         Me.Список_классовDataGridView.Name = "Список_классовDataGridView"
@@ -515,13 +514,6 @@ Partial Class ListOfClassesTable
         Me.DataGridViewTextBoxColumn12.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
         '
-        'DataGridViewTextBoxColumn14
-        '
-        Me.DataGridViewTextBoxColumn14.DataPropertyName = "Наименование_должности"
-        Me.DataGridViewTextBoxColumn14.HeaderText = "Наименование_должности"
-        Me.DataGridViewTextBoxColumn14.MinimumWidth = 6
-        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        '
         'ListOfClassesTable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -543,7 +535,7 @@ Partial Class ListOfClassesTable
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "ListOfClassesTable"
-        Me.Text = "Form1"
+        Me.Text = "ListOfClassesTable"
         CType(Me.Список_классовBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.СписокКлассовBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -608,5 +600,4 @@ Partial Class ListOfClassesTable
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
 End Class

@@ -237,6 +237,7 @@ Partial Class PositionsTable
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.UpdateOrder = SchoolBD.SchoolDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsersTableAdapter = Nothing
         Me.TableAdapterManager.Виды_классовTableAdapter = Nothing
         Me.TableAdapterManager.ДолжностиTableAdapter = Me.ДолжностиTableAdapter
         Me.TableAdapterManager.КлассыTableAdapter = Nothing
@@ -291,7 +292,7 @@ Partial Class PositionsTable
         Me.DataGridViewTextBoxColumn5.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         '
-        'Form10
+        'PositionsTable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -307,8 +308,8 @@ Partial Class PositionsTable
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "Form10"
-        Me.Text = "Form10"
+        Me.Name = "PositionsTable"
+        Me.Text = "PositionsTable"
         CType(Me.ДолжностиBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

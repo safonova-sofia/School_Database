@@ -66,7 +66,7 @@ Partial Class StaffReportWindow
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "StaffReportWindow"
-        Me.Text = "Form21"
+        Me.Text = "StaffReportWindow"
         CType(Me.СотрудникиBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

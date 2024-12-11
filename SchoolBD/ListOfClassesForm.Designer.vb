@@ -43,7 +43,6 @@ Partial Class ListOfClassesForm
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -74,7 +73,6 @@ Partial Class ListOfClassesForm
         Me.NumericUpDown6 = New System.Windows.Forms.NumericUpDown()
         Me.NumericUpDown7 = New System.Windows.Forms.NumericUpDown()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.СписокКлассовBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ДолжностиBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
@@ -257,15 +255,6 @@ Partial Class ListOfClassesForm
         Me.Button1.Text = "Первая"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(266, 486)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(81, 17)
-        Me.Label13.TabIndex = 88
-        Me.Label13.Text = "Должность"
-        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -389,7 +378,7 @@ Partial Class ListOfClassesForm
         Me.BindingNavigator1.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.BindingNavigator1.Name = "BindingNavigator1"
         Me.BindingNavigator1.PositionItem = Me.BindingNavigatorPositionItem
-        Me.BindingNavigator1.Size = New System.Drawing.Size(800, 31)
+        Me.BindingNavigator1.Size = New System.Drawing.Size(800, 27)
         Me.BindingNavigator1.TabIndex = 112
         Me.BindingNavigator1.Text = "BindingNavigator1"
         '
@@ -399,13 +388,13 @@ Partial Class ListOfClassesForm
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorAddNewItem.Text = "Добавить"
         '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(55, 28)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(55, 24)
         Me.BindingNavigatorCountItem.Text = "для {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Общее число элементов"
         '
@@ -415,7 +404,7 @@ Partial Class ListOfClassesForm
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorDeleteItem.Text = "Удалить"
         '
         'BindingNavigatorMoveFirstItem
@@ -424,7 +413,7 @@ Partial Class ListOfClassesForm
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMoveFirstItem.Text = "Переместить в начало"
         '
         'BindingNavigatorMovePreviousItem
@@ -433,13 +422,13 @@ Partial Class ListOfClassesForm
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMovePreviousItem.Text = "Переместить назад"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
         '
         'BindingNavigatorPositionItem
         '
@@ -454,7 +443,7 @@ Partial Class ListOfClassesForm
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -462,7 +451,7 @@ Partial Class ListOfClassesForm
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMoveNextItem.Text = "Переместить вперед"
         '
         'BindingNavigatorMoveLastItem
@@ -471,13 +460,13 @@ Partial Class ListOfClassesForm
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMoveLastItem.Text = "Переместить в конец"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
         '
         'NumericUpDown4
         '
@@ -527,18 +516,6 @@ Partial Class ListOfClassesForm
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(258, 22)
         Me.TextBox4.TabIndex = 119
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.СписокКлассовBindingSource1, "Наименование_должности", True))
-        Me.ComboBox1.DataSource = Me.ДолжностиBindingSource
-        Me.ComboBox1.DisplayMember = "Наименование_должности"
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(358, 483)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(260, 24)
-        Me.ComboBox1.TabIndex = 120
-        Me.ComboBox1.ValueMember = "Наименование_должности"
         '
         'СписокКлассовBindingSource1
         '
@@ -600,7 +577,6 @@ Partial Class ListOfClassesForm
         Me.ClientSize = New System.Drawing.Size(800, 695)
         Me.Controls.Add(Me.MaskedTextBox2)
         Me.Controls.Add(Me.MaskedTextBox1)
-        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.NumericUpDown7)
         Me.Controls.Add(Me.NumericUpDown6)
@@ -622,7 +598,6 @@ Partial Class ListOfClassesForm
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
@@ -636,7 +611,7 @@ Partial Class ListOfClassesForm
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "ListOfClassesForm"
-        Me.Text = "Form1"
+        Me.Text = "ListOfClassesForm"
         CType(Me.Список_классовBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.СотрудникиBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -669,7 +644,6 @@ Partial Class ListOfClassesForm
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
@@ -700,7 +674,6 @@ Partial Class ListOfClassesForm
     Friend WithEvents NumericUpDown6 As NumericUpDown
     Friend WithEvents NumericUpDown7 As NumericUpDown
     Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents MaskedTextBox1 As MaskedTextBox
     Friend WithEvents MaskedTextBox2 As MaskedTextBox
     Friend WithEvents SchoolDataSet As SchoolDataSet

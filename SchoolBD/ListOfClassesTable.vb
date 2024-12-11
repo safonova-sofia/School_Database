@@ -1,10 +1,40 @@
 ﻿Public Class ListOfClassesTable
+
+    Public UserType As String
+
+    Public Sub SetUserType(type As String)
+        UserType = type
+    End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Загружаем данные в таблицу
         Me.Список_классовTableAdapter.Fill(Me.SchoolDataSet.Список_классов)
 
         ' Загружаем данные в ComboBox
         LoadUniqueValuesToComboBox()
+
+        If UserType = "Student" Then
+            MessageBox.Show("Режим ученика: некоторые данные скрыты.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' Скрытие столбцов
+            DataGridViewTextBoxColumn10.Visible = False
+            DataGridViewTextBoxColumn11.Visible = False
+            DataGridViewTextBoxColumn12.Visible = False
+            DataGridViewTextBoxColumn8.Visible = False
+
+
+
+            ' Установка доступных полей в ListBox1
+            ListBox1.Items.Clear()
+            ListBox1.Items.AddRange(New String() {
+                "Количество_учеников",
+                "Буква",
+                "Год_обучения",
+                "Год_создания",
+                "Наименование",
+                "Описание",
+                "ФИО",
+                "Пол"
+            })
+        End If
     End Sub
 
     ' Метод для загрузки уникальных значений в ComboBox
@@ -155,8 +185,7 @@
                 Col = DataGridViewTextBoxColumn11
             Case 11
                 Col = DataGridViewTextBoxColumn12
-            Case 12
-                Col = DataGridViewTextBoxColumn14
+
 
         End Select
 

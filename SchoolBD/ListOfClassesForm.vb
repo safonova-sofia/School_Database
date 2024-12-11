@@ -1,4 +1,9 @@
 ﻿Public Class ListOfClassesForm
+    Public UserType As String
+
+    Public Sub SetUserType(type As String)
+        UserType = type
+    End Sub
 
 
 
@@ -59,7 +64,10 @@
 
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        ListOfClassesTable.Show()
+
+        Dim classesTable As New ListOfClassesTable() ' Создание экземпляра формы HRdepartmentTable
+        classesTable.SetUserType(UserType)          ' Передача типа пользователя
+        classesTable.Show()                         ' Открытие формы
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -100,7 +108,7 @@
 
     End Sub
 
-    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
+    Private Sub Label13_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -160,5 +168,25 @@
         'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Список_классов". При необходимости она может быть перемещена или удалена.
         Me.Список_классовTableAdapter.Fill(Me.SchoolDataSet.Список_классов)
 
+
+        ' Настройка интерфейса в зависимости от типа пользователя
+        If UserType = "Student" Then
+            ApplyStudentRestrictions()
+            ' Сообщение о том, что пользователь вошел как учитель
+            MessageBox.Show("Вы вошли как ученик. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        End If
+    End Sub
+
+    Private Sub ApplyStudentRestrictions()
+        Button3.Visible = False
+        Button6.Visible = False
+        Button7.Visible = False
+
+        ' Скрыть поля
+        MaskedTextBox1.Visible = False
+        MaskedTextBox2.Visible = False
+        TextBox4.Visible = False
+        NumericUpDown7.Visible = False
     End Sub
 End Class

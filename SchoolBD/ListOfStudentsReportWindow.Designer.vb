@@ -24,13 +24,23 @@ Partial Class ListOfStudentsReportWindow
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.SchoolDataSet = New SchoolBD.SchoolDataSet()
         Me.Список_учениковBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SchoolDataSet = New SchoolBD.SchoolDataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Список_учениковTableAdapter = New SchoolBD.SchoolDataSetTableAdapters.Список_учениковTableAdapter()
-        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Список_учениковBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Список_учениковBindingSource
+        '
+        Me.Список_учениковBindingSource.DataMember = "Список учеников"
+        Me.Список_учениковBindingSource.DataSource = Me.SchoolDataSet
+        '
+        'SchoolDataSet
+        '
+        Me.SchoolDataSet.DataSetName = "SchoolDataSet"
+        Me.SchoolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -45,30 +55,20 @@ Partial Class ListOfStudentsReportWindow
         Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
         Me.ReportViewer1.TabIndex = 0
         '
-        'SchoolDataSet
-        '
-        Me.SchoolDataSet.DataSetName = "SchoolDataSet"
-        Me.SchoolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Список_учениковBindingSource
-        '
-        Me.Список_учениковBindingSource.DataMember = "Список учеников"
-        Me.Список_учениковBindingSource.DataSource = Me.SchoolDataSet
-        '
         'Список_учениковTableAdapter
         '
         Me.Список_учениковTableAdapter.ClearBeforeFill = True
         '
-        'Form1
+        'ListOfStudentsReportWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
-        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "ListOfStudentsReportWindow"
+        Me.Text = "ListOfStudentsReportWindow"
         CType(Me.Список_учениковBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

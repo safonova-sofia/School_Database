@@ -63,11 +63,13 @@
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
-        OpenScheduleOfLessonsForm() 
+        OpenScheduleOfLessonsForm()
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        ListOfClassesForm.Show()
+        Dim classesForm As New ListOfClassesForm()
+        classesForm.SetUserType(UserType)  ' Передаем тип пользователя
+        classesForm.Show()
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
@@ -77,7 +79,9 @@
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        ListOfStudentsForm.Show()
+        Dim studentsForm As New ListOfStudentsForm()
+        studentsForm.SetUserType(UserType)  ' Передаем тип пользователя
+        studentsForm.Show()
     End Sub
 
     Private Sub SchoolDatabaseForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
