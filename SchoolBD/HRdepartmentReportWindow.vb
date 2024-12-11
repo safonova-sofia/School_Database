@@ -1,39 +1,34 @@
-﻿Public Class HRdepartmentReportWindow
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Загружаем данные в таблицу "Отдел_кадров"
-        Me.Отдел_кадровTableAdapter.Fill(Me.SchoolDataSet.Отдел_кадров)
+﻿Imports System.Data.SqlClient
 
-        ' Получаем фильтр и сортировку из GlobalState
-        Dim filter As String = GlobalState.CurrentFilter
-        Dim sortColumn As String = GlobalState.CurrentSortColumn
-        Dim sortDirection As System.ComponentModel.ListSortDirection = GlobalState.CurrentSortDirection
+Public Class HRdepartmentReportWindow
+    Private Sub HRdepartmentReportWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Базовый SQL-запрос
+        Dim baseQuery As String = "SELECT * FROM [Отдел кадров]"
+        Dim filterQuery As String = ""
+        Dim sortQuery As String = ""
 
-        ' Применяем фильтр и сортировку к источнику данных отчета
-        ApplyFilterAndSort(filter, sortColumn, sortDirection)
 
-        ' Обновляем отчет
-        Me.ReportViewer1.RefreshReport()
-    End Sub
+        ' Итоговый запрос
+        Dim query As String = baseQuery & filterQuery & sortQuery
 
-    Private Sub ApplyFilterAndSort(filter As String, sortColumn As String, sortDirection As System.ComponentModel.ListSortDirection)
-        ' Применяем фильтр
-        ' Если фильтр пустой, то фильтрация не применяется
-        If Not String.IsNullOrEmpty(filter) Then
-            ' Применяем фильтр к источнику данных
-            Me.Отдел_кадровBindingSource.Filter = filter
-        Else
-            ' Если фильтра нет, очищаем фильтрацию
-            Me.Отдел_кадровBindingSource.Filter = ""
-        End If
+        Try
+            ' Загружаем данные в DataSet
+            Using connection As New SqlConnection("Data Source=DESKTOP-NI2O2HU;Initial Catalog=School;Integrated Security=True")
+                Dim adapter As New SqlDataAdapter(query, connection)
+                Dim dataSet As New DataSet()
+                adapter.Fill(dataSet, "Отдел кадров")
 
-        ' Применяем сортировку
-        ' Если сортировка не пуста и колонка сортировки указана, применяем сортировку
-        If Not String.IsNullOrEmpty(sortColumn) Then
-            Dim direction As String = If(sortDirection = System.ComponentModel.ListSortDirection.Ascending, "ASC", "DESC")
-            ' Если необходимо, можно изменить сортировку данных в источнике (например, через запрос SQL в адаптере или настройку источника данных)
-            ' Для примера предполагаем, что сортировка должна быть настроена на уровне SQL или источника данных
-            ' В данном случае, если вы используете таблицу, фильтрацию и сортировку можно применить в запросе SQL через TableAdapter.
-            Me.Отдел_кадровTableAdapter.FillByFilterAndSort(Me.SchoolDataSet.Отдел_кадров, filter, sortColumn, direction)
-        End If
+                ' Привязываем данные к отчету
+                Dim reportDataSource As New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", dataSet.Tables("Отдел кадров"))
+
+                Me.ReportViewer1.LocalReport.DataSources.Clear()
+                Me.ReportViewer1.LocalReport.DataSources.Add(reportDataSource)
+            End Using
+
+            ' Обновляем отчет
+            Me.ReportViewer1.RefreshReport()
+        Catch ex As SqlException
+            MessageBox.Show("Ошибка выполнения SQL-запроса: " & ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class

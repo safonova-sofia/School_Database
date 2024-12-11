@@ -1,6 +1,23 @@
 ﻿Public Class HRdepartmentTable
 
     Private UserType As String
+    Public Shared AppliedFilter As String
+    Public Shared SortColumn As String
+    Public Shared SortDirection As System.ComponentModel.ListSortDirection
+
+    Private Sub HRdepartmentTable_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        ' Сохраняем фильтр
+        AppliedFilter = Отдел_кадровBindingSource.Filter
+
+        ' Сохраняем сортировку
+        If Отдел_кадровDataGridView.SortedColumn IsNot Nothing Then
+            SortColumn = Отдел_кадровDataGridView.SortedColumn.DataPropertyName
+            SortDirection = If(Отдел_кадровDataGridView.SortOrder = SortOrder.Ascending, "ASC", "DESC")
+        Else
+            SortColumn = Nothing
+            SortDirection = Nothing
+        End If
+    End Sub
 
     Public Sub SetUserType(type As String)
         UserType = type
