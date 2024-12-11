@@ -12,14 +12,14 @@
         Dim hrForm As New HRdepartmentForm()
         hrForm.SetUserType(UserType)  ' Передаем тип пользователя
         hrForm.Show()
-        Me.Hide()
+
     End Sub
 
     Private Sub OpenScheduleOfLessonsForm()
         Dim scheduleForm As New ScheduleOfLessonsForm()
         scheduleForm.SetUserType(UserType)  ' Передаем тип пользователя
         scheduleForm.Show()
-        Me.Hide()
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -71,7 +71,9 @@
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        ListOfSubjectsForm.Show()
+        Dim subjectsForm As New ListOfSubjectsForm()
+        subjectsForm.SetUserType(UserType)  ' Передаем тип пользователя
+        subjectsForm.Show()
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click

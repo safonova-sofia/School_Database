@@ -22,9 +22,6 @@
                 ' Сообщение о том, что пользователь вошел как ученик
                 ApplyTeacherOrStudentRestrictions()
                 MessageBox.Show("Вы вошли как ученик. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Else
-                ' Дополнительно для проверки, если тип пользователя не "Teacher"
-                MessageBox.Show("Тип пользователя: " & UserType, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub

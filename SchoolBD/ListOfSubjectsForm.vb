@@ -1,10 +1,47 @@
 ﻿Public Class ListOfSubjectsForm
+    Public UserType As String ' Тип пользователя: "Учитель", "Ученик" или "Администрация"
+
+    Public Sub SetUserType(type As String)
+        UserType = type
+    End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Должности". При необходимости она может быть перемещена или удалена.
         Me.ДолжностиTableAdapter.Fill(Me.SchoolDataSet.Должности)
         'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Список_предметов". При необходимости она может быть перемещена или удалена.
         Me.Список_предметовTableAdapter.Fill(Me.SchoolDataSet.Список_предметов)
 
+        ' Настройка интерфейса в зависимости от типа пользователя
+        If UserType = "Teacher" Then
+            ApplyTeacherRestrictions()
+            ' Сообщение о том, что пользователь вошел как учитель
+            MessageBox.Show("Вы вошли как учитель. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        ElseIf UserType = "Student" Then
+            ' Сообщение о том, что пользователь вошел как ученик
+            ApplyStudentRestrictions()
+            MessageBox.Show("Вы вошли как ученик. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        End If
+
+    End Sub
+
+    Private Sub ApplyTeacherRestrictions()
+        Button3.Visible = False ' Кнопка AddNew
+        Button6.Visible = False ' Кнопка RemoveCurrent
+        Button7.Visible = False ' Кнопка Save
+    End Sub
+
+    Private Sub ApplyStudentRestrictions()
+        Button3.Visible = False
+        Button6.Visible = False
+        Button7.Visible = False
+
+        ' Скрыть поля
+        NumericUpDown1.Visible = False
+        MaskedTextBox1.Visible = False
+        MaskedTextBox2.Visible = False
+        TextBox1.Visible = False
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -43,6 +80,5 @@
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         ListOfSubjectsReportWindow.Show()
-
     End Sub
 End Class

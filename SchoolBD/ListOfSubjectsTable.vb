@@ -1,4 +1,11 @@
 ﻿Public Class ListOfSubjectsTable
+
+    Private UserType As String
+
+    Public Sub SetUserType(type As String)
+        UserType = type
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim Col As System.Windows.Forms.DataGridViewColumn = Nothing ' Инициализируем переменную как Nothing
 
@@ -45,6 +52,26 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Список_предметов". При необходимости она может быть перемещена или удалена.
         Me.Список_предметовTableAdapter.Fill(Me.SchoolDataSet.Список_предметов)
+
+        ' Логика ограничения для "Ученика"
+        If UserType = "Student" Then
+            MessageBox.Show("Режим ученика: некоторые данные скрыты.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' Скрытие столбцов
+            DataGridViewTextBoxColumn3.Visible = False
+            DataGridViewTextBoxColumn5.Visible = False
+            DataGridViewTextBoxColumn6.Visible = False
+            DataGridViewTextBoxColumn7.Visible = False
+
+
+            ' Установка доступных полей в ListBox1
+            ListBox1.Items.Clear()
+            ListBox1.Items.AddRange(New String() {
+                "Наименование",
+                "ФИО",
+                "Пол",
+                "Описание"
+            })
+        End If
 
     End Sub
 
