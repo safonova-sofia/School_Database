@@ -1,6 +1,5 @@
 ﻿Public Class SchoolDatabaseForm
 
-
     Private UserType As String
 
     ' Метод для установки типа пользователя
@@ -49,7 +48,11 @@
     End Sub
 
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
-        HRdepartmentForm.Show()
+        If UserType <> "Student" Then ' Если тип пользователя не "ученик"
+            HRdepartmentForm.Show()
+        Else
+            MessageBox.Show("Вы не имеете доступа к этому разделу.", "Доступ ограничен", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
@@ -69,6 +72,15 @@
     End Sub
 
     Private Sub SchoolDatabaseForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        ' Скрыть кнопки для "Учителя" и "Ученика"
+        If UserType = "Teacher" Or UserType = "Student" Then
+            Button1.Visible = False
+            Button2.Visible = False
+            Button3.Visible = False
+            Button4.Visible = False
+            Button5.Visible = False
+            Button6.Visible = False
+            Button7.Visible = False
+        End If
     End Sub
 End Class
