@@ -12,13 +12,13 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.58517cm</Width>
+              <Width>5.69617cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>7.66467cm</Width>
+              <Width>4.95534cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.75967cm</Width>
+              <Width>3.70651cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -860,7 +860,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>1.8cm</Height>
-        <Width>42.67418cm</Width>
+        <Width>37.02269cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

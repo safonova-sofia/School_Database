@@ -58,8 +58,6 @@ Partial Class ListOfStudentsTable
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.Список_учениковBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.Список_учениковDataGridView = New System.Windows.Forms.DataGridView()
-        Me.ВидыклассовBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Виды_классовTableAdapter = New SchoolBD.SchoolDataSetTableAdapters.Виды_классовTableAdapter()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -74,6 +72,8 @@ Partial Class ListOfStudentsTable
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ВидыклассовBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Виды_классовTableAdapter = New SchoolBD.SchoolDataSetTableAdapters.Виды_классовTableAdapter()
         Me.СписокУчениковBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.СписокУчениковBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -272,6 +272,7 @@ Partial Class ListOfStudentsTable
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = SchoolBD.SchoolDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsersTableAdapter = Nothing
         Me.TableAdapterManager.Виды_классовTableAdapter = Nothing
         Me.TableAdapterManager.ДолжностиTableAdapter = Nothing
         Me.TableAdapterManager.КлассыTableAdapter = Nothing
@@ -311,7 +312,7 @@ Partial Class ListOfStudentsTable
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(55, 24)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(55, 28)
         Me.BindingNavigatorCountItem.Text = "для {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Общее число элементов"
         '
@@ -321,7 +322,7 @@ Partial Class ListOfStudentsTable
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorDeleteItem.Text = "Удалить"
         '
         'BindingNavigatorMoveFirstItem
@@ -330,7 +331,7 @@ Partial Class ListOfStudentsTable
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMoveFirstItem.Text = "Переместить в начало"
         '
         'BindingNavigatorMovePreviousItem
@@ -339,13 +340,13 @@ Partial Class ListOfStudentsTable
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMovePreviousItem.Text = "Переместить назад"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 31)
         '
         'BindingNavigatorPositionItem
         '
@@ -360,7 +361,7 @@ Partial Class ListOfStudentsTable
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 31)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -368,7 +369,7 @@ Partial Class ListOfStudentsTable
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMoveNextItem.Text = "Переместить вперед"
         '
         'BindingNavigatorMoveLastItem
@@ -377,13 +378,13 @@ Partial Class ListOfStudentsTable
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMoveLastItem.Text = "Переместить в конец"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 31)
         '
         'Список_учениковBindingNavigatorSaveItem
         '
@@ -391,7 +392,7 @@ Partial Class ListOfStudentsTable
         Me.Список_учениковBindingNavigatorSaveItem.Enabled = False
         Me.Список_учениковBindingNavigatorSaveItem.Image = CType(resources.GetObject("Список_учениковBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.Список_учениковBindingNavigatorSaveItem.Name = "Список_учениковBindingNavigatorSaveItem"
-        Me.Список_учениковBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
+        Me.Список_учениковBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 28)
         Me.Список_учениковBindingNavigatorSaveItem.Text = "Сохранить данные"
         '
         'Список_учениковDataGridView
@@ -411,15 +412,6 @@ Partial Class ListOfStudentsTable
         Me.Список_учениковDataGridView.RowTemplate.Height = 24
         Me.Список_учениковDataGridView.Size = New System.Drawing.Size(450, 342)
         Me.Список_учениковDataGridView.TabIndex = 75
-        '
-        'ВидыклассовBindingSource
-        '
-        Me.ВидыклассовBindingSource.DataMember = "Виды_классов"
-        Me.ВидыклассовBindingSource.DataSource = Me.SchoolDataSet
-        '
-        'Виды_классовTableAdapter
-        '
-        Me.Виды_классовTableAdapter.ClearBeforeFill = True
         '
         'DataGridViewTextBoxColumn1
         '
@@ -518,6 +510,15 @@ Partial Class ListOfStudentsTable
         Me.DataGridViewTextBoxColumn15.HeaderText = "Наименование_класса"
         Me.DataGridViewTextBoxColumn15.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        '
+        'ВидыклассовBindingSource
+        '
+        Me.ВидыклассовBindingSource.DataMember = "Виды_классов"
+        Me.ВидыклассовBindingSource.DataSource = Me.SchoolDataSet
+        '
+        'Виды_классовTableAdapter
+        '
+        Me.Виды_классовTableAdapter.ClearBeforeFill = True
         '
         'СписокУчениковBindingSource1
         '

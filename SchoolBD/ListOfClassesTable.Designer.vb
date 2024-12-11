@@ -270,6 +270,7 @@ Partial Class ListOfClassesTable
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = SchoolBD.SchoolDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsersTableAdapter = Nothing
         Me.TableAdapterManager.Виды_классовTableAdapter = Nothing
         Me.TableAdapterManager.ДолжностиTableAdapter = Nothing
         Me.TableAdapterManager.КлассыTableAdapter = Nothing

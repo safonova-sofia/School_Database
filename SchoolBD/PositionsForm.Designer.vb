@@ -135,6 +135,7 @@ Partial Class PositionsForm
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.UpdateOrder = SchoolBD.SchoolDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsersTableAdapter = Nothing
         Me.TableAdapterManager.Виды_классовTableAdapter = Nothing
         Me.TableAdapterManager.ДолжностиTableAdapter = Me.ДолжностиTableAdapter
         Me.TableAdapterManager.КлассыTableAdapter = Nothing

@@ -28,6 +28,7 @@ Partial Class HRdepartmentTable
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ДолжностиBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -53,13 +54,12 @@ Partial Class HRdepartmentTable
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ДолжностиBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ДолжностиTableAdapter = New SchoolBD.SchoolDataSetTableAdapters.ДолжностиTableAdapter()
         CType(Me.Отдел_кадровBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ДолжностиBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Отдел_кадровDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ДолжностиBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Отдел_кадровBindingSource
@@ -101,6 +101,11 @@ Partial Class HRdepartmentTable
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(341, 24)
         Me.ComboBox1.TabIndex = 47
+        '
+        'ДолжностиBindingSource
+        '
+        Me.ДолжностиBindingSource.DataMember = "Должности"
+        Me.ДолжностиBindingSource.DataSource = Me.SchoolDataSet
         '
         'Button5
         '
@@ -239,6 +244,7 @@ Partial Class HRdepartmentTable
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = SchoolBD.SchoolDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsersTableAdapter = Nothing
         Me.TableAdapterManager.Виды_классовTableAdapter = Nothing
         Me.TableAdapterManager.ДолжностиTableAdapter = Nothing
         Me.TableAdapterManager.КлассыTableAdapter = Nothing
@@ -335,11 +341,6 @@ Partial Class HRdepartmentTable
         Me.DataGridViewTextBoxColumn10.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         '
-        'ДолжностиBindingSource
-        '
-        Me.ДолжностиBindingSource.DataMember = "Должности"
-        Me.ДолжностиBindingSource.DataSource = Me.SchoolDataSet
-        '
         'ДолжностиTableAdapter
         '
         Me.ДолжностиTableAdapter.ClearBeforeFill = True
@@ -365,10 +366,10 @@ Partial Class HRdepartmentTable
         Me.Text = "Form1"
         CType(Me.Отдел_кадровBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ДолжностиBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.Отдел_кадровDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ДолжностиBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

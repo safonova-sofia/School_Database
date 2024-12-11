@@ -27,9 +27,9 @@ Partial Class ClassesForm
         Dim БукваLabel As System.Windows.Forms.Label
         Dim Год_обученияLabel As System.Windows.Forms.Label
         Dim Год_созданияLabel As System.Windows.Forms.Label
-        Dim Код_сотрудника_классного_руководителяLabel As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ClassesForm))
+        Me.Код_сотрудника_классного_руководителяLabel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SchoolDataSet = New SchoolBD.SchoolDataSet()
         Me.КлассыBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -68,7 +68,6 @@ Partial Class ClassesForm
         БукваLabel = New System.Windows.Forms.Label()
         Год_обученияLabel = New System.Windows.Forms.Label()
         Год_созданияLabel = New System.Windows.Forms.Label()
-        Код_сотрудника_классного_руководителяLabel = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.КлассыBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,12 +115,12 @@ Partial Class ClassesForm
         '
         'Код_сотрудника_классного_руководителяLabel
         '
-        Код_сотрудника_классного_руководителяLabel.AutoSize = True
-        Код_сотрудника_классного_руководителяLabel.Location = New System.Drawing.Point(119, 133)
-        Код_сотрудника_классного_руководителяLabel.Name = "Код_сотрудника_классного_руководителяLabel"
-        Код_сотрудника_классного_руководителяLabel.Size = New System.Drawing.Size(283, 17)
-        Код_сотрудника_классного_руководителяLabel.TabIndex = 10
-        Код_сотрудника_классного_руководителяLabel.Text = "Код сотрудника классного руководителя:"
+        Me.Код_сотрудника_классного_руководителяLabel.AutoSize = True
+        Me.Код_сотрудника_классного_руководителяLabel.Location = New System.Drawing.Point(119, 133)
+        Me.Код_сотрудника_классного_руководителяLabel.Name = "Код_сотрудника_классного_руководителяLabel"
+        Me.Код_сотрудника_классного_руководителяLabel.Size = New System.Drawing.Size(283, 17)
+        Me.Код_сотрудника_классного_руководителяLabel.TabIndex = 10
+        Me.Код_сотрудника_классного_руководителяLabel.Text = "Код сотрудника классного руководителя:"
         '
         'Label2
         '
@@ -162,6 +161,7 @@ Partial Class ClassesForm
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.UpdateOrder = SchoolBD.SchoolDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsersTableAdapter = Nothing
         Me.TableAdapterManager.Виды_классовTableAdapter = Nothing
         Me.TableAdapterManager.ДолжностиTableAdapter = Nothing
         Me.TableAdapterManager.КлассыTableAdapter = Me.КлассыTableAdapter
@@ -438,7 +438,7 @@ Partial Class ClassesForm
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Код_сотрудника_классного_руководителяLabel)
+        Me.Controls.Add(Me.Код_сотрудника_классного_руководителяLabel)
         Me.Controls.Add(Год_созданияLabel)
         Me.Controls.Add(Me.Год_созданияTextBox)
         Me.Controls.Add(Год_обученияLabel)
@@ -495,4 +495,5 @@ Partial Class ClassesForm
     Friend WithEvents BindingNavigatorMoveNextItem1 As ToolStripButton
     Friend WithEvents BindingNavigatorMoveLastItem1 As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator5 As ToolStripSeparator
+    Friend WithEvents Код_сотрудника_классного_руководителяLabel As Label
 End Class

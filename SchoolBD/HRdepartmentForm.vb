@@ -30,8 +30,6 @@
         MaskedTextBox1.Visible = False   ' Телефон
         MaskedTextBox2.Visible = False   ' Паспортные данные
 
-
-
         ' Скрытие кнопок управления данными
         Button3.Visible = False    ' Добавить
         Button6.Visible = False    ' Удалить
@@ -72,12 +70,23 @@
 
     ' Переход к дополнительным формам
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        HRdepartmentTable.Show()
+        Dim hrTable As New HRdepartmentTable() ' Создание экземпляра формы HRdepartmentTable
+        hrTable.SetUserType(UserType)          ' Передача типа пользователя
+        hrTable.Show()                         ' Открытие формы
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+
+        ' Сохранение текущего фильтра в глобальной переменной
+        GlobalState.ReportFilter = Отдел_кадровBindingSource.Filter ' Или другое название BindingSource
+
+        ' Закрытие текущей формы
+        Me.Close()
+
+        ' Открытие формы с отчетом
         HRdepartmentReportWindow.Show()
     End Sub
+
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
         HRDepartmentBarChart.Show()

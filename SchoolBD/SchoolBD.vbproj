@@ -114,12 +114,19 @@
     <Compile Include="ClassesReportWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="IntroForm.Designer.vb">
+      <DependentUpon>IntroForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IntroForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GlobalState.vb" />
     <Compile Include="PositionReportWindow.Designer.vb">
       <DependentUpon>PositionReportWindow.vb</DependentUpon>
     </Compile>
@@ -368,6 +375,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ClassesReportWindow.resx">
       <DependentUpon>ClassesReportWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntroForm.resx">
+      <DependentUpon>IntroForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>

@@ -1,18 +1,36 @@
 ﻿Public Class HRdepartmentTable
+
+    Private UserType As String
+
+    Public Sub SetUserType(type As String)
+        UserType = type
+    End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Должности". При необходимости она может быть перемещена или удалена.
+        ' Загрузка данных в таблицы
         Me.ДолжностиTableAdapter.Fill(Me.SchoolDataSet.Должности)
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "SchoolDataSet.Отдел_кадров". При необходимости она может быть перемещена или удалена.
         Me.Отдел_кадровTableAdapter.Fill(Me.SchoolDataSet.Отдел_кадров)
 
-    End Sub
+        ' Логика ограничения для "Учителя"
+        If UserType = "Teacher" Then
+            MessageBox.Show("Режим учителя: некоторые данные скрыты.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' Скрытие столбцов
+            DataGridViewTextBoxColumn10.Visible = False
+            DataGridViewTextBoxColumn9.Visible = False
+            DataGridViewTextBoxColumn8.Visible = False
+            DataGridViewTextBoxColumn6.Visible = False
+            DataGridViewTextBoxColumn2.Visible = False
 
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
-
+            ' Установка доступных полей в ListBox1
+            ListBox1.Items.Clear()
+            ListBox1.Items.AddRange(New String() {
+                "Наименование должности",
+                "Обязанности",
+                "Требования",
+                "ФИО",
+                "Пол"
+            })
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -22,13 +40,13 @@
             Case 0
                 Col = DataGridViewTextBoxColumn1
             Case 1
-                Col = DataGridViewTextBoxColumn2
-            Case 2
                 Col = DataGridViewTextBoxColumn3
-            Case 3
+            Case 2
                 Col = DataGridViewTextBoxColumn4
-            Case 4
+            Case 3
                 Col = DataGridViewTextBoxColumn5
+            Case 4
+                Col = DataGridViewTextBoxColumn7
             Case 5
                 Col = DataGridViewTextBoxColumn6
             Case 6
@@ -39,6 +57,7 @@
                 Col = DataGridViewTextBoxColumn9
             Case 9
                 Col = DataGridViewTextBoxColumn10
+
             Case Else
                 MessageBox.Show("Выберите корректный столбец для сортировки.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
@@ -51,11 +70,6 @@
                 Отдел_кадровDataGridView.Sort(Col, System.ComponentModel.ListSortDirection.Descending)
             End If
         End If
-    End Sub
-
-
-    Private Sub Отдел_кадровDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Отдел_кадровDataGridView.CellContentClick
-
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -86,5 +100,9 @@
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Me.Close()
+    End Sub
+
+    Private Sub Отдел_кадровDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Отдел_кадровDataGridView.CellContentClick
+
     End Sub
 End Class
