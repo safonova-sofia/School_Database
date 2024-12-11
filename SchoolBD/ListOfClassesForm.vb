@@ -189,4 +189,14 @@
         TextBox4.Visible = False
         NumericUpDown7.Visible = False
     End Sub
+
+    Private Sub BindingNavigator1_RefreshItems(sender As Object, e As EventArgs) Handles BindingNavigator1.RefreshItems
+        If UserType = "Student" Then
+            BindingNavigatorAddNewItem.Visible = False
+            BindingNavigatorDeleteItem.Visible = False
+        Else
+            BindingNavigatorAddNewItem.Visible = True
+            BindingNavigatorDeleteItem.Visible = True
+        End If
+    End Sub
 End Class

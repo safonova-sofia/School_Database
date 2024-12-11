@@ -83,4 +83,14 @@
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         ListOfSubjectsReportWindow.Show()
     End Sub
+
+    Private Sub BindingNavigator1_RefreshItems(sender As Object, e As EventArgs) Handles BindingNavigator1.RefreshItems
+        If UserType = "Teacher" Or UserType = "Student" Then
+            BindingNavigatorAddNewItem.Visible = False
+            BindingNavigatorDeleteItem.Visible = False
+        Else
+            BindingNavigatorAddNewItem.Visible = True
+            BindingNavigatorDeleteItem.Visible = True
+        End If
+    End Sub
 End Class

@@ -83,4 +83,15 @@
         Расписание_занятийBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.SchoolDataSet)
     End Sub
+
+    Private Sub BindingNavigator1_RefreshItems(sender As Object, e As EventArgs) Handles BindingNavigator1.RefreshItems
+        If UserType = "Teacher" Or UserType = "Student" Then
+            BindingNavigatorAddNewItem.Visible = False
+            BindingNavigatorDeleteItem.Visible = False
+        Else
+            BindingNavigatorAddNewItem.Visible = True
+            BindingNavigatorDeleteItem.Visible = True
+        End If
+    End Sub
+
 End Class
