@@ -94,9 +94,9 @@ Partial Class HRdepartmentTable
         'ComboBox1
         '
         Me.ComboBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ComboBox1.DataSource = Me.ДолжностиBindingSource
-        Me.ComboBox1.DisplayMember = "Наименование_должности"
+        Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.Отдел_кадровBindingSource, "Наименование_должности", True))
         Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Учитель", "Завуч", "Директор", "Психолог", "Библиотекарь"})
         Me.ComboBox1.Location = New System.Drawing.Point(149, 455)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(341, 24)

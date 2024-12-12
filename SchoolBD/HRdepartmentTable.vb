@@ -5,19 +5,6 @@
     Public Shared SortColumn As String
     Public Shared SortDirection As System.ComponentModel.ListSortDirection
 
-    Private Sub HRdepartmentTable_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        ' Сохраняем фильтр
-        AppliedFilter = Отдел_кадровBindingSource.Filter
-
-        ' Сохраняем сортировку
-        If Отдел_кадровDataGridView.SortedColumn IsNot Nothing Then
-            SortColumn = Отдел_кадровDataGridView.SortedColumn.DataPropertyName
-            SortDirection = If(Отдел_кадровDataGridView.SortOrder = SortOrder.Ascending, "ASC", "DESC")
-        Else
-            SortColumn = Nothing
-            SortDirection = Nothing
-        End If
-    End Sub
 
     Public Sub SetUserType(type As String)
         UserType = type
@@ -116,8 +103,57 @@
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        ' Установить значения глобальных переменных
+        If ComboBox1.SelectedItem IsNot Nothing Then
+            ' Проверяем тип объекта и извлекаем текст
+            Dim selectedItem = ComboBox1.SelectedItem
+            If TypeOf selectedItem Is DataRowView Then
+                ' Если элемент привязан к DataRowView, извлекаем нужное значение
+                GlobalState.CurrentFilter = CType(selectedItem, DataRowView)("ColumnName").ToString()
+            Else
+                ' Если элемент не привязан, берем строковое представление
+                GlobalState.CurrentFilter = selectedItem.ToString()
+            End If
+        End If
+
+        ' Определить выбранный столбец для сортировки
+        If ListBox1.SelectedIndex >= 0 Then
+            Select Case ListBox1.SelectedIndex
+                Case 0
+                    GlobalState.CurrentSortColumn = "Наименование_должности"
+                Case 1
+                    GlobalState.CurrentSortColumn = "Оклад"
+                Case 2
+                    GlobalState.CurrentSortColumn = "Обязанности"
+                Case 3
+                    GlobalState.CurrentSortColumn = "Требования"
+                Case 4
+                    GlobalState.CurrentSortColumn = "ФИО"
+                Case 5
+                    GlobalState.CurrentSortColumn = "Возраст"
+                Case 6
+                    GlobalState.CurrentSortColumn = "Пол"
+                Case 7
+                    GlobalState.CurrentSortColumn = "Адрес"
+                Case 8
+                    GlobalState.CurrentSortColumn = "Телефон"
+                Case 9
+                    GlobalState.CurrentSortColumn = "Паспортные_данные"
+            End Select
+        End If
+
+        ' Установить направление сортировки
+        If RadioButton1.Checked Then
+            GlobalState.CurrentSortDirection = System.ComponentModel.ListSortDirection.Ascending
+        Else
+            GlobalState.CurrentSortDirection = System.ComponentModel.ListSortDirection.Descending
+        End If
+
+        ' Закрыть текущую форму
         Me.Close()
     End Sub
+
+
 
     Private Sub Отдел_кадровDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Отдел_кадровDataGridView.CellContentClick
 

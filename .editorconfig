@@ -2,3 +2,6 @@
 
 # IDE0058: Значение выражения никогда не используется
 visual_basic_style_unused_value_expression_statement_preference = unused_local_variable
+
+# IDE0002: Упрощение доступа для членов
+dotnet_diagnostic.IDE0002.severity = none

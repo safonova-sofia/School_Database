@@ -1,4 +1,7 @@
 ﻿Public Class HRdepartmentForm
+
+
+
     Private UserType As String
 
     ' Метод для установки типа пользователя
@@ -74,16 +77,10 @@
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-
-        ' Сохранение текущего фильтра в глобальной переменной
-        GlobalState.ReportFilter = Отдел_кадровBindingSource.Filter ' Или другое название BindingSource
-
-        ' Закрытие текущей формы
-        Me.Close()
-
-        ' Открытие формы с отчетом
-        HRdepartmentReportWindow.Show()
+        Dim f As New HRdepartmentReportWindow(GlobalState.CurrentFilter, GlobalState.CurrentSortColumn, GlobalState.CurrentSortDirection.ToString())
+        f.Show()
     End Sub
+
 
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
