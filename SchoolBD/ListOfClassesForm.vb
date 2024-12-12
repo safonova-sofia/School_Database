@@ -58,8 +58,9 @@
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        ListOfClassesReportWindow.Show()
 
+        Dim f As New ListOfClassesReportWindow(GlobalState.CurrentFilter, GlobalState.CurrentSortColumn, GlobalState.CurrentSortDirection.ToString())
+        f.Show()
     End Sub
 
 

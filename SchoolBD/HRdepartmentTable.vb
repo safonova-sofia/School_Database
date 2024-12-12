@@ -1,9 +1,7 @@
 ﻿Public Class HRdepartmentTable
 
     Private UserType As String
-    Public Shared AppliedFilter As String
-    Public Shared SortColumn As String
-    Public Shared SortDirection As System.ComponentModel.ListSortDirection
+
 
 
     Public Sub SetUserType(type As String)
