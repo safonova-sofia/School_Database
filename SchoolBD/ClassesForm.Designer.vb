@@ -329,7 +329,7 @@ Partial Class ClassesForm
         Me.BindingNavigator2.MovePreviousItem = Me.BindingNavigatorMovePreviousItem1
         Me.BindingNavigator2.Name = "BindingNavigator2"
         Me.BindingNavigator2.PositionItem = Me.BindingNavigatorPositionItem1
-        Me.BindingNavigator2.Size = New System.Drawing.Size(836, 27)
+        Me.BindingNavigator2.Size = New System.Drawing.Size(836, 31)
         Me.BindingNavigator2.TabIndex = 40
         Me.BindingNavigator2.Text = "BindingNavigator2"
         '
@@ -339,13 +339,13 @@ Partial Class ClassesForm
         Me.BindingNavigatorAddNewItem1.Image = CType(resources.GetObject("BindingNavigatorAddNewItem1.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem1.Name = "BindingNavigatorAddNewItem1"
         Me.BindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem1.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorAddNewItem1.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorAddNewItem1.Text = "Добавить"
         '
         'BindingNavigatorCountItem1
         '
         Me.BindingNavigatorCountItem1.Name = "BindingNavigatorCountItem1"
-        Me.BindingNavigatorCountItem1.Size = New System.Drawing.Size(55, 24)
+        Me.BindingNavigatorCountItem1.Size = New System.Drawing.Size(55, 28)
         Me.BindingNavigatorCountItem1.Text = "для {0}"
         Me.BindingNavigatorCountItem1.ToolTipText = "Общее число элементов"
         '
@@ -355,7 +355,7 @@ Partial Class ClassesForm
         Me.BindingNavigatorDeleteItem1.Image = CType(resources.GetObject("BindingNavigatorDeleteItem1.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem1.Name = "BindingNavigatorDeleteItem1"
         Me.BindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem1.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorDeleteItem1.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorDeleteItem1.Text = "Удалить"
         '
         'BindingNavigatorMoveFirstItem1
@@ -364,7 +364,7 @@ Partial Class ClassesForm
         Me.BindingNavigatorMoveFirstItem1.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem1.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem1.Name = "BindingNavigatorMoveFirstItem1"
         Me.BindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem1.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveFirstItem1.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMoveFirstItem1.Text = "Переместить в начало"
         '
         'BindingNavigatorMovePreviousItem1
@@ -373,13 +373,13 @@ Partial Class ClassesForm
         Me.BindingNavigatorMovePreviousItem1.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem1.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem1.Name = "BindingNavigatorMovePreviousItem1"
         Me.BindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem1.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMovePreviousItem1.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMovePreviousItem1.Text = "Переместить назад"
         '
         'BindingNavigatorSeparator3
         '
         Me.BindingNavigatorSeparator3.Name = "BindingNavigatorSeparator3"
-        Me.BindingNavigatorSeparator3.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator3.Size = New System.Drawing.Size(6, 31)
         '
         'BindingNavigatorPositionItem1
         '
@@ -394,7 +394,7 @@ Partial Class ClassesForm
         'BindingNavigatorSeparator4
         '
         Me.BindingNavigatorSeparator4.Name = "BindingNavigatorSeparator4"
-        Me.BindingNavigatorSeparator4.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator4.Size = New System.Drawing.Size(6, 31)
         '
         'BindingNavigatorMoveNextItem1
         '
@@ -402,7 +402,7 @@ Partial Class ClassesForm
         Me.BindingNavigatorMoveNextItem1.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem1.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem1.Name = "BindingNavigatorMoveNextItem1"
         Me.BindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem1.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveNextItem1.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMoveNextItem1.Text = "Переместить вперед"
         '
         'BindingNavigatorMoveLastItem1
@@ -411,13 +411,13 @@ Partial Class ClassesForm
         Me.BindingNavigatorMoveLastItem1.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem1.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem1.Name = "BindingNavigatorMoveLastItem1"
         Me.BindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem1.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveLastItem1.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMoveLastItem1.Text = "Переместить в конец"
         '
         'BindingNavigatorSeparator5
         '
         Me.BindingNavigatorSeparator5.Name = "BindingNavigatorSeparator5"
-        Me.BindingNavigatorSeparator5.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator5.Size = New System.Drawing.Size(6, 31)
         '
         'ClassesForm
         '

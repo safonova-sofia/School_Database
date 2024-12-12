@@ -75,6 +75,59 @@
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        ' Установить значения глобальных переменных
+        If ComboBox1.SelectedItem IsNot Nothing Then
+            ' Проверяем тип объекта и извлекаем текст
+            Dim selectedItem = ComboBox1.SelectedItem
+            If TypeOf selectedItem Is DataRowView Then
+                ' Если элемент привязан к DataRowView, извлекаем нужное значение
+                GlobalState.CurrentFilter = CType(selectedItem, DataRowView)("Наименование_класса").ToString()
+            Else
+                ' Если элемент не привязан, берем строковое представление
+                GlobalState.CurrentFilter = selectedItem.ToString()
+            End If
+        End If
+
+        ' Определить выбранный столбец для сортировки
+        If ListBox1.SelectedIndex >= 0 Then
+            Select Case ListBox1.SelectedIndex
+                Case 0
+                    GlobalState.CurrentSortColumn = "ФИО"
+                Case 1
+                    GlobalState.CurrentSortColumn = "Дата_рождения"
+                Case 2
+                    GlobalState.CurrentSortColumn = "Пол"
+                Case 3
+                    GlobalState.CurrentSortColumn = "Адрес"
+                Case 4
+                    GlobalState.CurrentSortColumn = "ФИО_отца"
+                Case 5
+                    GlobalState.CurrentSortColumn = "ФИО_матери"
+                Case 6
+                    GlobalState.CurrentSortColumn = "Дополнительная_информация"
+                Case 7
+                    GlobalState.CurrentSortColumn = "Количество_учеников"
+                Case 8
+                    GlobalState.CurrentSortColumn = "Буква"
+                Case 9
+                    GlobalState.CurrentSortColumn = "Год_обучения"
+                Case 10
+                    GlobalState.CurrentSortColumn = "Год_создания"
+                Case 11
+                    GlobalState.CurrentSortColumn = "Классный_руководитель"
+                Case 12
+                    GlobalState.CurrentSortColumn = "Наименование_класса"
+            End Select
+        End If
+
+        ' Установить направление сортировки
+        If RadioButton1.Checked Then
+            GlobalState.CurrentSortDirection = System.ComponentModel.ListSortDirection.Ascending
+        Else
+            GlobalState.CurrentSortDirection = System.ComponentModel.ListSortDirection.Descending
+        End If
+
+        ' Закрыть текущую форму
         Me.Close()
     End Sub
 
