@@ -175,7 +175,12 @@
             ApplyStudentRestrictions()
             ' Сообщение о том, что пользователь вошел как учитель
             MessageBox.Show("Вы вошли как ученик. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+        ElseIf UserType = "Teacher" Then
+            ApplyTeacherRestrictions()
+            MessageBox.Show("Вы вошли как учитель. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ElseIf UserType = "Teacher" Then
+            ApplyAdminRestrictions()
+            MessageBox.Show("Вы вошли как админ. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -191,8 +196,28 @@
         NumericUpDown7.Visible = False
     End Sub
 
+    Private Sub ApplyTeacherRestrictions()
+        Button3.Visible = False
+        Button6.Visible = False
+        Button7.Visible = False
+
+        ' Скрыть поля
+
+        MaskedTextBox2.Visible = False
+
+    End Sub
+
+    Private Sub ApplyAdminRestrictions()
+        Button3.Visible = False
+        Button6.Visible = False
+        Button7.Visible = False
+
+
+
+    End Sub
+
     Private Sub BindingNavigator1_RefreshItems(sender As Object, e As EventArgs) Handles BindingNavigator1.RefreshItems
-        If UserType = "Student" Then
+        If UserType = "Student" Or UserType = "Teacher" Then
             BindingNavigatorAddNewItem.Visible = False
             BindingNavigatorDeleteItem.Visible = False
         Else

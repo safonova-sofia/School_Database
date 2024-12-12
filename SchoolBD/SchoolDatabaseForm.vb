@@ -86,7 +86,7 @@
 
     Private Sub SchoolDatabaseForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Скрыть кнопки для "Учителя" и "Ученика"
-        If UserType = "Teacher" Or UserType = "Student" Then
+        If UserType = "Student" Then
             Button1.Visible = False
             Button2.Visible = False
             Button3.Visible = False
@@ -94,6 +94,16 @@
             Button5.Visible = False
             Button6.Visible = False
             Button7.Visible = False
+            Button14.Visible = False
+        ElseIf UserType = "Teacher" Then
+            Button1.Visible = False
+            Button2.Visible = False
+
+            Button4.Visible = False
+
+            Button6.Visible = False
+
+
         End If
     End Sub
 End Class

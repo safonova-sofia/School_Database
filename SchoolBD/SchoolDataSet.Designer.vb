@@ -16551,15 +16551,6 @@ Namespace SchoolDataSetTableAdapters
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
-
-        ' В TableAdapter добавьте метод, который принимает параметры фильтра и сортировки.
-        Public Sub FillByFilterAndSort(ByVal dataTable As SchoolDataSet.Отдел_кадровDataTable, ByVal filter As String, ByVal sortColumn As String, ByVal sortDirection As String)
-            ' Выполнение SQL-запроса с параметрами фильтрации и сортировки
-            Dim query As String = "SELECT * FROM Отдел_кадров WHERE " & filter & " ORDER BY " & sortColumn & " " & sortDirection
-            Me.Adapter.SelectCommand.CommandText = query
-            Me.Adapter.Fill(dataTable)
-        End Sub
-
     End Class
     
     '''<summary>

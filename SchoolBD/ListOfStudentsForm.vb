@@ -19,13 +19,21 @@
         Me.Список_учениковTableAdapter.Fill(Me.SchoolDataSet.Список_учеников)
 
         If UserType = "Student" Then
-            ApplyStudentRestrictions()
+            Restrictions()
             ' Сообщение о том, что пользователь вошел как учитель
             MessageBox.Show("Вы вошли как ученик. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ElseIf UserType = "Teacher" Then
+            Restrictions()
+            ' Сообщение о том, что пользователь вошел как учитель
+            MessageBox.Show("Вы вошли как учитель. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ElseIf UserType = "Admin" Then
+            Restrictions()
+            ' Сообщение о том, что пользователь вошел как учитель
+            MessageBox.Show("Вы вошли как админ. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
-    Private Sub ApplyStudentRestrictions()
+    Private Sub Restrictions()
 
 
         ' Скрытие кнопок управления данными
@@ -75,7 +83,7 @@
     End Sub
 
     Private Sub BindingNavigator1_RefreshItems(sender As Object, e As EventArgs) Handles BindingNavigator1.RefreshItems
-        If UserType = "Student" Then
+        If UserType = "Student" Or UserType = "Teacher" Or UserType = "Admin" Then
             BindingNavigatorAddNewItem.Visible = False
             BindingNavigatorDeleteItem.Visible = False
         Else

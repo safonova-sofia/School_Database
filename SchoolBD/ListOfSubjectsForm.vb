@@ -13,7 +13,7 @@
 
         ' Настройка интерфейса в зависимости от типа пользователя
         If UserType = "Teacher" Then
-            ApplyTeacherRestrictions()
+            ApplyTeacherAndAdminRestrictions()
             ' Сообщение о том, что пользователь вошел как учитель
             MessageBox.Show("Вы вошли как учитель. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -21,12 +21,15 @@
             ' Сообщение о том, что пользователь вошел как ученик
             ApplyStudentRestrictions()
             MessageBox.Show("Вы вошли как ученик. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+        ElseIf UserType = "Admin" Then
+            ' Сообщение о том, что пользователь вошел как ученик
+            ApplyStudentRestrictions()
+            MessageBox.Show("Вы вошли как админ. Доступ ограничен.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
     End Sub
 
-    Private Sub ApplyTeacherRestrictions()
+    Private Sub ApplyTeacherAndAdminRestrictions()
         Button3.Visible = False ' Кнопка AddNew
         Button6.Visible = False ' Кнопка RemoveCurrent
         Button7.Visible = False ' Кнопка Save
