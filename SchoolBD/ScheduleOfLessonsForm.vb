@@ -74,7 +74,8 @@
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        ScheduleOfLessonsReportWindow.Show()
+        Dim f As New ScheduleOfLessonsReportWindow(GlobalState.CurrentFilter, GlobalState.CurrentSortColumn, GlobalState.CurrentSortDirection.ToString())
+        f.Show()
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click

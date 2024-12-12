@@ -106,6 +106,75 @@
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs)
+        If ComboBox1.SelectedItem IsNot Nothing Then
+            ' Проверяем тип объекта и извлекаем текст
+
+            Dim selectedItem = ComboBox1.SelectedItem
+            If TypeOf selectedItem Is DataRowView Then
+                ' Если элемент привязан к DataRowView, извлекаем нужное значение
+                GlobalState.CurrentFilter = CType(selectedItem, DataRowView)("ColumnName").ToString()
+            Else
+                ' Если элемент не привязан, берем строковое представление
+                GlobalState.CurrentFilter = selectedItem.ToString()
+            End If
+
+
+
+
+            ' Попытка преобразования строки в дату
+            Dim formattedDate As String = ""
+            If DateTime.TryParse(GlobalState.CurrentFilter, Nothing) Then
+                Dim parsedDate As DateTime = DateTime.Parse(GlobalState.CurrentFilter)
+                formattedDate = parsedDate.ToString("dd.MM.yyyy") ' Применение формата только даты
+            Else
+                MessageBox.Show("Неверный формат даты.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            ' Сохранение отформатированной даты в фильтр
+            GlobalState.CurrentFilter = formattedDate
+        End If
+
+
+
+        ' Определить выбранный столбец для сортировки
+        If ListBox1.SelectedIndex >= 0 Then
+            Select Case ListBox1.SelectedIndex
+                Case 0
+                    GlobalState.CurrentSortColumn = "Дата"
+                Case 1
+                    GlobalState.CurrentSortColumn = "День_недели"
+                Case 2
+                    GlobalState.CurrentSortColumn = "Время_начала"
+                Case 3
+                    GlobalState.CurrentSortColumn = "Время_окончания"
+                Case 4
+                    GlobalState.CurrentSortColumn = "Наименование"
+                Case 5
+                    GlobalState.CurrentSortColumn = "Описание"
+                Case 6
+                    GlobalState.CurrentSortColumn = "Количество_учеников"
+                Case 7
+                    GlobalState.CurrentSortColumn = "Буква"
+                Case 8
+                    GlobalState.CurrentSortColumn = "Год_обучения"
+                Case 9
+                    GlobalState.CurrentSortColumn = "Год_создания"
+                Case 10
+                    GlobalState.CurrentSortColumn = "Преподаватель"
+                Case 11
+                    GlobalState.CurrentSortColumn = "Классный_руководитель"
+            End Select
+        End If
+
+        ' Установить направление сортировки
+        If RadioButton1.Checked Then
+            GlobalState.CurrentSortDirection = System.ComponentModel.ListSortDirection.Ascending
+        Else
+            GlobalState.CurrentSortDirection = System.ComponentModel.ListSortDirection.Descending
+        End If
+
+        ' Закрыть текущую форму
         Me.Close()
     End Sub
 
@@ -126,14 +195,14 @@
     End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim filter As String = ""
+        Dim filterParts As New List(Of String)
 
         ' Фильтрация по дате
         If Not String.IsNullOrEmpty(ComboBox1.Text) Then
             Dim dateValue As DateTime
             If DateTime.TryParseExact(ComboBox1.Text, "dd.MM.yyyy", Globalization.CultureInfo.InvariantCulture, Globalization.DateTimeStyles.None, dateValue) Then
-                filter &= $"Дата = '{dateValue:dd.MM.yyyy}'"
-            ElseIf ComboBox1.Text <> "" Then ' Проверяем, что это не пустое значение
+                filterParts.Add($"Дата = '{dateValue:yyyy-MM-dd}'")
+            Else
                 MessageBox.Show("Некорректный формат даты. Используйте формат DD.MM.YYYY.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End If
@@ -141,19 +210,22 @@
 
         ' Фильтрация по году обучения
         If Not String.IsNullOrEmpty(ComboBox2.Text) Then
-            If filter <> "" Then filter &= " AND "
-            filter &= $"Год_обучения = '{ComboBox2.Text}'"
+            filterParts.Add($"Год_обучения = '{ComboBox2.Text}'")
         End If
 
         ' Фильтрация по букве класса
         If Not String.IsNullOrEmpty(ComboBox3.Text) Then
-            If filter <> "" Then filter &= " AND "
-            filter &= $"Буква = '{ComboBox3.Text}'"
+            filterParts.Add($"Буква = '{ComboBox3.Text}'")
         End If
 
-        ' Устанавливаем фильтр
+        ' Объединить фильтры
+        Dim filter = String.Join(" AND ", filterParts)
+
+        ' Установить фильтр
         Расписание_занятийBindingSource.Filter = filter
+        GlobalState.CurrentFilter = filter
     End Sub
+
 
     Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Button4.Click
         For i = 0 To Расписание_занятийDataGridView.ColumnCount - 1
