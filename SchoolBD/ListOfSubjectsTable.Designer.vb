@@ -51,10 +51,12 @@ Partial Class ListOfSubjectsTable
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.СписокПредметовBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.Список_предметовBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SchoolDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Список_предметовDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.СписокПредметовBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -317,6 +319,11 @@ Partial Class ListOfSubjectsTable
         Me.DataGridViewTextBoxColumn9.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         '
+        'СписокПредметовBindingSource
+        '
+        Me.СписокПредметовBindingSource.DataMember = "Список предметов"
+        Me.СписокПредметовBindingSource.DataSource = Me.SchoolDataSet
+        '
         'ListOfSubjectsTable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -341,6 +348,7 @@ Partial Class ListOfSubjectsTable
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.Список_предметовDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.СписокПредметовBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -374,4 +382,5 @@ Partial Class ListOfSubjectsTable
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents СписокПредметовBindingSource As BindingSource
 End Class
